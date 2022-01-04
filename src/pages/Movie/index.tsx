@@ -1,8 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, {VFC} from "react";
 import {Movie, MovieGenres, MovieGenresLI, MoviePoster, MovieTitle, MovieYear} from './style';
+// import PropTypes from "prop-types";
 
-const Index = ({year, title, summary, poster, genres}: any) => {
+interface Props {
+    id: string;
+    year: string;
+    title: string;
+    summary: string;
+    poster: string;
+    genres: Array<string>;
+}
+
+const Index: VFC<Props> = ({id, year, title, summary, poster, genres}) => {
     return (
         <Movie>
             <MoviePoster src={poster} alt={title} title={title} />
@@ -10,7 +19,7 @@ const Index = ({year, title, summary, poster, genres}: any) => {
                 <MovieTitle>{title}</MovieTitle>
                 <MovieYear>{year}</MovieYear>
                 <MovieGenres>
-                    {genres.map((genre: any, index: any) => (
+                    {genres.map((genre: string, index: number) => (
                         <MovieGenresLI key={index}>
                             {genre}
                         </MovieGenresLI>
@@ -21,14 +30,5 @@ const Index = ({year, title, summary, poster, genres}: any) => {
         </Movie>
     );
 }
-
-Index.propTypes = {
-    id: PropTypes.number.isRequired,
-    year: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    summary: PropTypes.string.isRequired,
-    poster: PropTypes.string.isRequired,
-    genres: PropTypes.arrayOf(PropTypes.string).isRequired
-};
 
 export default Index;
