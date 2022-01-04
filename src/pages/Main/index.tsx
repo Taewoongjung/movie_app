@@ -8,7 +8,7 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState([]);
 
-  const getMovies = async () => {
+  const getMovies = async() => {
     const {
       data: {
         data: { movies }
