@@ -1,6 +1,5 @@
 import React, {VFC} from "react";
 import {Movie, MovieGenres, MovieGenresLI, MoviePoster, MovieTitle, MovieYear} from './style';
-// import PropTypes from "prop-types";
 
 interface Props {
     id: string;
