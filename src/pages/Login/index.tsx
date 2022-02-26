@@ -1,6 +1,7 @@
 import React, {useCallback} from 'react';
 import { CenteredDiv, Box, UserIdPw, Button, ForGet } from './style';
 import axios from "axios";
+import useSWR from "swr";
 
 const index = () => {
 
